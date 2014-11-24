@@ -143,6 +143,12 @@
     for (i = 0, l = n.length; i < l; i++) {
       n[i][writePrefix + 'size'] =
         n[i][readPrefix + 'size'] * (ns ? a : 1) + (ns ? b : 0);
+
+      n[i][writePrefix + 'w'] =
+        n[i][readPrefix + 'w'] * (ns ? a : 1) + (ns ? b : 0);
+      n[i][writePrefix + 'h'] =
+        n[i][readPrefix + 'h'] * (ns ? a : 1) + (ns ? b : 0);
+
       n[i][writePrefix + 'x'] =
         (n[i][readPrefix + 'x'] - (maxX + minX) / 2) * (np ? scale : 1);
       n[i][writePrefix + 'y'] =

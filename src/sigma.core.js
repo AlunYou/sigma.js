@@ -496,6 +496,8 @@
         (i === l - 1) ? 'ready:' : ('tmp' + (++prefix) + ':')
       );
 
+      var nodes1 = this.graph.nodes();
+
     // Then, for each camera, call the "rescale" middleware, unless the
     // settings specify not to:
     for (k in this.cameras) {
@@ -529,7 +531,8 @@
         );
 
         // Refresh quadtree:
-        c.quadtree.index(this.graph.nodes(), {
+        var nodes = this.graph.nodes();
+        c.quadtree.index(nodes, {
           prefix: c.readPrefix,
           bounds: {
             x: bounds.minX,

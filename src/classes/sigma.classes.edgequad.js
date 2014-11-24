@@ -38,6 +38,23 @@
       };
     },
 
+      /**
+       * Transforms a graph node with x, y and size into an
+       * axis-aligned rectangle.
+       *
+       * @param  {object} A graph node with at least a point (x, y) and a w and a h. w is width of rect, h is height
+       * @return {object} A square: two points (x1, y1), (x2, y2) and height.
+       */
+      pointToRectangle: function(n) {
+          return {
+              x1: n.x - n.w / 2.0,
+              y1: n.y - n.h / 2.0,
+              x2: n.x + n.w / 2.0,
+              y2: n.y - n.h / 2.0,
+              height: n.h
+          };
+      },
+
     /**
      * Transforms a graph edge with x1, y1, x2, y2 and size into an
      * axis-aligned square.

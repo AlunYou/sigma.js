@@ -142,7 +142,7 @@
     minEdgeSize: 0.5,
     maxEdgeSize: 1,
     minNodeSize: 1,
-    maxNodeSize: 8,
+    maxNodeSize: 80,
 
 
 

@@ -69,21 +69,25 @@
  */
 var i,
     s,
-    N = 100,
-    E = 500,
+    N = 3,
+    E = 2,
     g = {
       nodes: [],
       edges: []
     };
+
+var positions = [{'x':0, 'y':0}, {'x':30, 'y':30}, {'x':50, 'y':-50}]
 
 // Generate a random graph:
 for (i = 0; i < N; i++)
   g.nodes.push({
     id: 'n' + i,
     label: 'Node ' + i,
-    x: Math.random(),
-    y: Math.random(),
-    size: Math.random(),
+    //x: positions[i].x,//Math.random(),
+    //y: positions[i].y,//Math.random(),
+    size: 10,
+    w: 20,
+    h: 20,
     color: '#666'
   });
 
@@ -92,7 +96,7 @@ for (i = 0; i < E; i++)
     id: 'e' + i,
     source: 'n' + (Math.random() * N | 0),
     target: 'n' + (Math.random() * N | 0),
-    size: Math.random(),
+    size: 100,//Math.random(),
     color: '#ccc'
   });
 
